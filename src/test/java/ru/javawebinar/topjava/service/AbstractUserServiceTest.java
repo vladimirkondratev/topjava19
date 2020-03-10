@@ -45,7 +45,7 @@ public abstract class AbstractUserServiceTest extends AbstractServiseTest{
 
 
     @Autowired
-    private UserService service;
+    protected UserService service;
 
     @Autowired
     private UserRepository repository;

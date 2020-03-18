@@ -37,6 +37,7 @@ public class JdbcUserRepository implements UserRepository {
     }
 
     @Override
+    @Transactional
     public User save(User user) {
         BeanPropertySqlParameterSource parameterSource = new BeanPropertySqlParameterSource(user);
 
@@ -52,6 +53,7 @@ public class JdbcUserRepository implements UserRepository {
     }
 
     @Override
+    @Transactional
     public boolean delete(int id) {
         return jdbcTemplate.update("DELETE FROM users WHERE id=?", id) != 0;
     }

@@ -1,7 +1,12 @@
 package ru.javawebinar.topjava.to;
 
+import com.fasterxml.jackson.annotation.JsonAutoDetect;
+
 import java.time.LocalDateTime;
 
+import static com.fasterxml.jackson.annotation.JsonAutoDetect.Visibility.*;
+
+@JsonAutoDetect(fieldVisibility = ANY, getterVisibility = NONE, isGetterVisibility = NONE, setterVisibility = NONE)
 public class MealTo {
     private final Integer id;
 

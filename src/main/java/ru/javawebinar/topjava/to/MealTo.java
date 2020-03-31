@@ -2,9 +2,11 @@ package ru.javawebinar.topjava.to;
 
 import com.fasterxml.jackson.annotation.JsonAutoDetect;
 
+import java.beans.ConstructorProperties;
 import java.time.LocalDateTime;
 
-import static com.fasterxml.jackson.annotation.JsonAutoDetect.Visibility.*;
+import static com.fasterxml.jackson.annotation.JsonAutoDetect.Visibility.ANY;
+import static com.fasterxml.jackson.annotation.JsonAutoDetect.Visibility.NONE;
 
 @JsonAutoDetect(fieldVisibility = ANY, getterVisibility = NONE, isGetterVisibility = NONE, setterVisibility = NONE)
 public class MealTo {
@@ -18,6 +20,7 @@ public class MealTo {
 
     private final boolean excess;
 
+    @ConstructorProperties({"id", "dateTime", "description", "calories", "excess"})
     public MealTo(Integer id, LocalDateTime dateTime, String description, int calories, boolean excess) {
         this.id = id;
         this.dateTime = dateTime;

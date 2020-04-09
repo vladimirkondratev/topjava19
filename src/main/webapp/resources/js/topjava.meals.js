@@ -34,3 +34,17 @@ $(function () {
         }
     );
 });
+
+function updateFilteredTable()
+{
+    $.ajax({
+        type: "GET",
+        url: context.ajaxUrl + "filter",
+        data: $("#filter").serialize()
+    }).done(updateTableWithData)
+}
+
+function clearFilter()
+{
+    updateTable();
+}
